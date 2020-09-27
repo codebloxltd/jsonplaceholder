@@ -1,0 +1,30 @@
+﻿@using AM.Web.Models.ViewModels
+@model List<UserPostsVM>
+@{
+    ViewBag.Title = "Users";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Number of posts</th>
+                </tr>
+            </thead>
+            @foreach(var item in Model)
+            {
+            <tbody>
+                <tr>
+                    <td>@Html.ActionLink(@item.Name, "Index", "Posts", routeValues: new { userId = item.Id }, htmlAttributes: null)</td>
+                    <td>@item.Username</td>
+                    <td>@item.PostCount</td>
+                </tr>
+            </tbody>
+            }
+            
+        </table>
+    </div>
+</div>

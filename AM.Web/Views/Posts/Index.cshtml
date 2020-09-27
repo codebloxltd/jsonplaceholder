@@ -1,0 +1,31 @@
+﻿@using AM.Web.Models.ViewModels
+@model UserDetailsVM
+@{
+    ViewBag.Title = "Posts";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>@Model.Name</h2>
+        <p>@Model.Phone</p>
+        <p>@Model.Email</p>
+        <p>@Model.Website</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Body</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Posts)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.Title</td>
+                        <td>@item.Body</td>
+                    </tr>
+                </tbody>
+            }
+
+        </table>
+    </div>
+</div>
